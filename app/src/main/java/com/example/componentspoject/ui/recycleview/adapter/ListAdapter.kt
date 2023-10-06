@@ -1,4 +1,4 @@
-package com.example.componentspoject.ui.adapter
+package com.example.componentspoject.ui.recycleview.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.componentspoject.R
 
-class ListAdapter(private val dataSet: MutableList<String>, val deleteItem: (Int) -> Unit,) :
+class ListAdapter(private val dataSet: ArrayList<String>, val deleteItem: (Int) -> Unit,) :
     RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

@@ -2,8 +2,7 @@ package com.example.componentspoject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.FrameLayout
-import com.example.componentspoject.ui.RecyclerViewFragment
+import com.example.componentspoject.ui.recycleview.RecyclerViewFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
