@@ -2,6 +2,7 @@ package com.example.componentspoject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.componentspoject.databinding.ActivityMainBinding
 import com.example.componentspoject.ui.calendar.CalendarFragment
@@ -22,6 +23,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.calendarFragment.setOnClickListener {
             switchFragment(calendarFragment)
+        }
+        binding.fab.setOnClickListener {
+            Toast.makeText(this,"Button Clicked",Toast.LENGTH_LONG).show()
         }
         setContentView(view)
     }
