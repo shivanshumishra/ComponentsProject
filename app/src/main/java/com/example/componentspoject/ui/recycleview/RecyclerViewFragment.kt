@@ -13,24 +13,27 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.componentspoject.R
+import com.example.componentspoject.databinding.FragmentRecyclerViewBinding
 import com.example.componentspoject.ui.recycleview.adapter.ListAdapter
 
 class RecyclerViewFragment : Fragment() {
     private lateinit var dataset : MutableList<String>
     private lateinit var customAdapter : ListAdapter
     private lateinit var viewVModel: RecycleViewVModel
+    private lateinit var binding: FragmentRecyclerViewBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_recycler_view, container, false)
+        binding = FragmentRecyclerViewBinding.inflate(layoutInflater)
+        val view = binding.root
         dataset = mutableListOf<String>()
         viewVModel = ViewModelProvider(this).get(RecycleViewVModel::class.java)
         customAdapter = ListAdapter(viewVModel.dataset.value ?: arrayListOf(),viewVModel::deleteItemFromList)
-        val recyclerView: RecyclerView = view.findViewById(R.id.rvItems)
-        val addBtn : Button = view.findViewById(R.id.btnAdd)
-        val editText : EditText = view.findViewById(R.id.editTextItemValue)
+        val recyclerView: RecyclerView = binding.rvItems
+        val addBtn : Button = binding.btnAdd
+        val editText : EditText = binding.editTextItemValue
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = customAdapter
         subscribe()
