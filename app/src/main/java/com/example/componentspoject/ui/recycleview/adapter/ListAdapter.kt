@@ -1,5 +1,6 @@
 package com.example.componentspoject.ui.recycleview.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,17 +9,24 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.componentspoject.R
 
-class ListAdapter(private val dataSet: ArrayList<String>, val deleteItem: (Int) -> Unit,) :
+class ListAdapter(
+    private val dataSet: ArrayList<String>,
+    val deleteItem: (Int) -> Unit,
+    val showDatePicker: (View?) -> String,) :
     RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
         val deleteIcon : ImageView
+        val calendarIcon : ImageView
+        val dateTextView : TextView
 
         init {
             // Define click listener for the ViewHolder's View
             textView = view.findViewById(R.id.list_item_value)
             deleteIcon = view.findViewById(R.id.deleteIcon)
+            calendarIcon = view.findViewById(R.id.ivCalendar)
+            dateTextView = view.findViewById(R.id.selectedDate)
         }
     }
 
@@ -39,6 +47,11 @@ class ListAdapter(private val dataSet: ArrayList<String>, val deleteItem: (Int) 
         viewHolder.textView.text = dataSet[position]
         viewHolder.deleteIcon.setOnClickListener {
             deleteItem(position)
+        }
+        viewHolder.calendarIcon.setOnClickListener {
+           val date = showDatePicker(it)
+            Log.i("SHIVV",showDatePicker(it))
+            viewHolder.dateTextView.text = date
         }
     }
 
