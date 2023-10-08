@@ -17,11 +17,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick Date for item"
+        android:id="@+id/labelPickDate"
+        app:layout_constraintTop_toBottomOf="@id/editTextItemValue"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/labelPickDate"
+        android:text="XX-XX-XXXX"
+        app:layout_constraintTop_toBottomOf="@id/editTextItemValue"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/gray"
+        android:id="@+id/tvDate"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintStart_toEndOf="@id/tvDate"
+        app:layout_constraintTop_toBottomOf="@id/editTextItemValue"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:id="@+id/ivCalendar"
+        android:contentDescription="Pick date for item"
+        />
+
     <Button
+        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
-        app:layout_constraintTop_toBottomOf="@id/editTextItemValue"
+        app:layout_constraintTop_toBottomOf="@id/labelPickDate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/btnAdd"

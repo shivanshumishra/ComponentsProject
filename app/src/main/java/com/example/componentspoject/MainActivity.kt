@@ -11,11 +11,12 @@ import com.example.componentspoject.ui.recycleview.RecyclerViewFragment
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
+    private lateinit var recyclerViewFragment : RecyclerViewFragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
-        val recyclerViewFragment = RecyclerViewFragment()
+        recyclerViewFragment = RecyclerViewFragment()
         switchFragment(recyclerViewFragment)
         val calendarFragment = CalendarFragment()
         binding.fragment1.setOnClickListener {

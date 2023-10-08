@@ -52,18 +52,6 @@
                 />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_calendar"
-                app:layout_constraintEnd_toStartOf="@id/guidline90"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:padding="8dp"
-                android:id="@+id/ivCalendar"
-                android:contentDescription="Pick date for item"
-                />
-
-            <ImageView
                 android:id="@+id/deleteIcon"
                 android:padding="8dp"
                 app:layout_constraintStart_toEndOf="@id/guidline90"

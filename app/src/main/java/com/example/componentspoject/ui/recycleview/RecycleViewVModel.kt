@@ -2,14 +2,15 @@ package com.example.componentspoject.ui.recycleview
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.componentspoject.model.ListItem
 
 class RecycleViewVModel : ViewModel(){
-    private val _dataSet : MutableLiveData<ArrayList<String>> = MutableLiveData<ArrayList<String>>(
+    private val _dataSet : MutableLiveData<ArrayList<ListItem>> = MutableLiveData<ArrayList<ListItem>>(
         arrayListOf())
     val dataset = _dataSet
 
 
-    fun addItemToList(item : String) {
+    fun addItemToList(item : ListItem) {
         val currentList = _dataSet.value ?: ArrayList()
         currentList.add(item)
         _dataSet.postValue(currentList)
