@@ -1,14 +1,12 @@
 package com.example.componentspoject.reposiotry
 
+import androidx.lifecycle.LiveData
 import com.example.componentspoject.db.addItemDB.AddItemDao
 import com.example.componentspoject.model.ListItem
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
-class ItemRepository(val addItemDao: AddItemDao) {
+class ItemRepository(private val addItemDao: AddItemDao) {
 
-    suspend fun getAllItem() : List<ListItem> {
+    suspend fun getAllItem() : List<ListItem>? {
         return addItemDao.getListItem()
     }
 

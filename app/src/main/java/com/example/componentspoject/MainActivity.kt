@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private val database: AddItemDatabase by lazy {
         AddItemDatabase.getDatabase(this)
     }
-    private val itemsRepository : ItemRepository by lazy {
+    val itemsRepository : ItemRepository by lazy {
         ItemRepository(database.addItemDao())
     }
     override fun onCreate(savedInstanceState: Bundle?) {

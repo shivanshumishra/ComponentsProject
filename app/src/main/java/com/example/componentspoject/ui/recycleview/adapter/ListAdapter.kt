@@ -13,7 +13,7 @@ class ListAdapter(
     private val dataSet: ArrayList<ListItem>,
     val deleteItem: (Int) -> Unit) :
     RecyclerView.Adapter<ListAdapter.ViewHolder>() {
-
+    private var data : ArrayList<ListItem> = dataSet
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
         val deleteIcon : ImageView
@@ -25,6 +25,11 @@ class ListAdapter(
             deleteIcon = view.findViewById(R.id.deleteIcon)
             dateTextView = view.findViewById(R.id.selectedDate)
         }
+    }
+
+    fun setData(data:ArrayList<ListItem>){
+        this.data = data
+        notifyItemRangeChanged(0,data.size)
     }
 
     // Create new views (invoked by the layout manager)

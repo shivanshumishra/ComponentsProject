@@ -3,6 +3,7 @@ package com.example.componentspoject.ui.recycleview
 import android.app.DatePickerDialog
 import android.icu.util.Calendar
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.componentspoject.MainActivity
 import com.example.componentspoject.model.ListItem
 import com.example.componentspoject.R
 import com.example.componentspoject.databinding.FragmentRecyclerViewBinding
@@ -32,7 +34,9 @@ class RecyclerViewFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentRecyclerViewBinding.inflate(layoutInflater)
         val view = binding.root
-        viewVModel = ViewModelProvider(this).get(RecycleViewVModel::class.java)
+        viewVModel = ViewModelProvider(this,RecycleViewModelFactory(MainActivity().itemsRepository))[RecycleViewVModel::class.java]
+        subscribe()
+
         customAdapter = ListAdapter(viewVModel.dataset.value ?: arrayListOf(),viewVModel::deleteItemFromList)
         val recyclerView: RecyclerView = binding.rvItems
         val addBtn : Button = binding.btnAdd
@@ -60,7 +64,7 @@ class RecyclerViewFragment : Fragment() {
                 setTextColor(resources.getColor(R.color.gray))
             }
             binding.editTextItemValue.setText("")
-            viewVModel.addItemToList(item)
+            viewVModel.addItemToList(item,this.context)
         }
 
         binding.ivCalendar.setOnClickListener {
@@ -90,12 +94,11 @@ class RecyclerViewFragment : Fragment() {
 
     private fun subscribe() {
         viewVModel.dataset.observe(viewLifecycleOwner) {
-            customAdapter.notifyDataSetChanged()
+            customAdapter.setData(it)
         }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        subscribe()
     }
 }
