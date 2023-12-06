@@ -1,13 +1,12 @@
-package com.example.componentspoject.db.addItemDB
+package com.example.componentspoject.recyclerview.db.addItemDB
 
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.componentspoject.model.ListItem
+import com.example.componentspoject.recyclerview.model.ListItem
 
 @Dao
 interface AddItemDao  {

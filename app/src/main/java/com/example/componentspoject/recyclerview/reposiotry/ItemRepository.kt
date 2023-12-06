@@ -1,8 +1,7 @@
-package com.example.componentspoject.reposiotry
+package com.example.componentspoject.recyclerview.reposiotry
 
-import androidx.lifecycle.LiveData
-import com.example.componentspoject.db.addItemDB.AddItemDao
-import com.example.componentspoject.model.ListItem
+import com.example.componentspoject.recyclerview.db.addItemDB.AddItemDao
+import com.example.componentspoject.recyclerview.model.ListItem
 
 class ItemRepository(private val addItemDao: AddItemDao) {
 

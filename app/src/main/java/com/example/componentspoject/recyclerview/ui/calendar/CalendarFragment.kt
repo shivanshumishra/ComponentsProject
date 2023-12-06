@@ -1,4 +1,4 @@
-package com.example.componentspoject.ui.calendar
+package com.example.componentspoject.recyclerview.ui.calendar
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

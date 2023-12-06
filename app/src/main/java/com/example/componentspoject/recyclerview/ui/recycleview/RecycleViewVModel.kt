@@ -1,13 +1,11 @@
-package com.example.componentspoject.ui.recycleview
+package com.example.componentspoject.recyclerview.ui.recycleview
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.componentspoject.model.ListItem
-import com.example.componentspoject.reposiotry.ItemRepository
-import kotlinx.coroutines.CoroutineScope
+import com.example.componentspoject.recyclerview.model.ListItem
+import com.example.componentspoject.recyclerview.reposiotry.ItemRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

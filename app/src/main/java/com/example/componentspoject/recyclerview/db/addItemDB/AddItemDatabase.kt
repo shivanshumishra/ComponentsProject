@@ -1,10 +1,10 @@
-package com.example.componentspoject.db.addItemDB
+package com.example.componentspoject.recyclerview.db.addItemDB
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.componentspoject.model.ListItem
+import com.example.componentspoject.recyclerview.model.ListItem
 
 @Database(entities = [ListItem::class], version = 1)
 abstract class AddItemDatabase : RoomDatabase() {

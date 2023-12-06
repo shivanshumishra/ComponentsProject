@@ -1,4 +1,4 @@
-package com.example.componentspoject.model
+package com.example.componentspoject.recyclerview.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,4 +1,4 @@
-package com.example.componentspoject.utility
+package com.example.componentspoject.recyclerview.utility
 
 import android.app.Activity
 import android.view.View

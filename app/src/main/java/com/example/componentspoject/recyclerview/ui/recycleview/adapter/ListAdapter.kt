@@ -1,4 +1,4 @@
-package com.example.componentspoject.ui.recycleview.adapter
+package com.example.componentspoject.recyclerview.ui.recycleview.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.componentspoject.model.ListItem
+import com.example.componentspoject.recyclerview.model.ListItem
 import com.example.componentspoject.R
 
 class ListAdapter(
